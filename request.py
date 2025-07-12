@@ -1,9 +1,16 @@
 import requests
 import time
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+username = os.getenv("USERNAME1", "").strip()
+password = os.getenv("PASSWORD", "").strip()
 
 proxies = {
-    "http": "http://mpuSMHbGJM:JoIawiGZ1UUxhO21dv3n@network.joinmassive.com:65535",
-    "https": "https://mpuSMHbGJM:JoIawiGZ1UUxhO21dv3n@network.joinmassive.com:65535"
+    "http": f"http://{username}:{password}@network.joinmassive.com:65535",
+    "https": f"https://{username}:{password}@network.joinmassive.com:65535"
 }
 
 for i in range(5):
